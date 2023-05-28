@@ -19,9 +19,9 @@ You can run your application in dev mode that enables live coding using:
 
 This project is using Quarkus Dev Services specifically Postgresql and MongoDB database deployed in containers, you can use [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-`Postgresql` is using localhost and port 5432 if you want to change this configuration please refer to application.properties file
-`Postgresql` you can use `load.sql` file to init database to correct execution for this example.
-`Mongodb` is using localhost and port 27017 if you want to change this configuration please refer to application.properties file
+- `Postgresql` is using localhost and port 5432 if you want to change this configuration please refer to application.properties file
+- `Postgresql` you can use `load.sql` file to init database to correct execution for this example.
+- `Mongodb` is using localhost and port 27017 if you want to change this configuration please refer to application.properties file
 
 ## Packaging and running the application
 
