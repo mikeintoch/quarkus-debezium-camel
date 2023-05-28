@@ -13,14 +13,7 @@ public class DebeziumRoute extends RouteBuilder {
         .log("${body}")
         .choice()
           .when(header("CamelDebeziumOperation").isEqualTo("c"))
-              .process(exchange -> {
-                  // Transform the data to a format suitable for MongoDB
-                  Map<String, Object> data = exchange.getIn().getBody(Map.class);
-                  data.remove("updated_at");
-                  data.remove("created_at");
-                  data.remove("phone");
-                  exchange.getIn().setBody(data);
-                })
+              .convertBodyTo(Map.class)
               .to("mongodb:mydb?database={{mongodb.database}}&collection={{mongodb.collection}}&operation=insert");
     }
 }
